@@ -3,6 +3,8 @@ import socketio
 import numpy as np
 import mnist_evaluate
 import asyncio
+import json
+import uuid
 
 sio = socketio.AsyncServer()
 app = web.Application()
@@ -11,6 +13,11 @@ sio.attach(app)
 async def index(request):
     """Serve the client-side application."""
     with open('index.html') as f:
+        return web.Response(text=f.read(), content_type='text/html')
+
+async def create(request):
+    """Serve the client-side application."""
+    with open('create.html') as f:
         return web.Response(text=f.read(), content_type='text/html')
 
 
@@ -51,9 +58,29 @@ async def classify(sid, data):
 
     await sio.emit("classified", {'label': label, 'probability': probability})
 
+@sio.on("save")
+async def save(sid, data):    
+    label = data["label"]
+    img64 = data["img64"]
+    img32 = data["img32"]
+
+    data64 = {'label': label, 'img': img64}
+    data32 = {'label': label, 'img': img32}
+
+    identifier = uuid.uuid4()
+    print(identifier)
+
+    with open('./img32/{}.json'.format(identifier), 'w') as outfile:
+        json.dump(data32, outfile)
+
+    with open('./img64/{}.json'.format(identifier), 'w') as outfile:
+        json.dump(data64, outfile)
+
+    await sio.emit("saved")
  
 app.router.add_static('/static', path='./static/')
 app.router.add_get('/', index)
+app.router.add_get('/create', create)
 
 
 if __name__ == '__main__':
