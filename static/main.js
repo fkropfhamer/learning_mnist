@@ -33,8 +33,11 @@ window.addEventListener("mouseup", () => {
 })
 
 function draw() {
+    console.log(drawing);
     drawing.forEach(stroke => {
-        drawPoints(ctx, stroke)
+        if (stroke.length > 0) {
+            drawPoints(ctx, stroke)
+        }
     });
 }
 
