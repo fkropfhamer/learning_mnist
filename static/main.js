@@ -1,7 +1,4 @@
 const originalSize = 256;
-const scaledSize = 28
-
-const test_image = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 18, 18, 18, 126, 136, 175, 26, 166, 255, 247, 127, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 30, 36, 94, 154, 170, 253, 253, 253, 253, 253, 225, 172, 253, 242, 195, 64, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 49, 238, 253, 253, 253, 253, 253, 253, 253, 253, 251, 93, 82, 82, 56, 39, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 18, 219, 253, 253, 253, 253, 253, 198, 182, 247, 241, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 80, 156, 107, 253, 253, 205, 11, 0, 43, 154, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 1, 154, 253, 90, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 139, 253, 190, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 190, 253, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 241, 225, 160, 108, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 81, 240, 253, 253, 119, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 186, 253, 253, 150, 27, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 93, 252, 253, 187, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 253, 249, 64, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 46, 130, 183, 253, 253, 207, 2, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 148, 229, 253, 253, 253, 250, 182, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 114, 221, 253, 253, 253, 253, 201, 78, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 23, 66, 213, 253, 253, 253, 253, 198, 81, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 18, 171, 219, 253, 253, 253, 253, 195, 80, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 55, 172, 226, 253, 253, 253, 253, 244, 133, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 136, 253, 253, 253, 212, 135, 132, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
 const socket = io("http://localhost:8080");
 
@@ -9,27 +6,12 @@ socket.emit("msg", [["test"]]);
 
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
-ctx.lineWidth = 20;
+ctx.lineWidth = 25;
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 
-const canvas2 = document.getElementById("scaled-canvas");
-const ctx2 = canvas2.getContext("2d");
 
-// ctx2.scale(scaledSize/originalSize, scaledSize/originalSize)
-
-drawing = [[]]
-
-/*
-for (let i = 0; i < originalSize; i++) {
-    drawing[i] = [];
-    for (let j = 0; j < originalSize; j++) {
-        drawing[i][j] = 0;
-    }
-}*/
-
-// draw2(test_image)
-
+let drawing = [[]]
 let mouseIsDown = false;
 
 canvas.addEventListener("mousemove", (event) => {
@@ -51,45 +33,18 @@ window.addEventListener("mouseup", () => {
 })
 
 function draw() {
-    drawing.forEach(d => {
-        drawPoints(ctx, d)
-        //drawPoints(ctx2, d)
-        ctx2.drawImage(canvas, 0, 0, 28, 28)
+    drawing.forEach(stroke => {
+        drawPoints(ctx, stroke)
     });
-    
-    /*drawing.forEach((a, i) => {
-        next = drawing[i + 1];
-        // console.log(a, next);
-        if (next) {
-            if (a.pen && next.pen) {
-                ctx.lineWidth = 20;
-                ctx2.lineWidth = 40;
-                //console.log("drawing");
-                ctx.beginPath();
-                ctx.moveTo(a.x, a.y);
-                ctx.fillStyle = "black";
-                ctx.quadraticCurveTo(next.x, next.y);
-                ctx.stroke();
-
-                ctx2.beginPath();
-                ctx2.moveTo(a.x, a.y);
-                ctx2.fillStyle = "black";
-                ctx2.quadraticCurveTo(next.x, next.y);
-                ctx2.stroke();
-                
-            }
-        }
-    });*/
 }
 
 function clear() {
     drawing = [[]];
     ctx.clearRect(0, 0, 256, 256)
-    ctx2.clearRect(0, 0, 28, 28)
 }
 
 const button = document.getElementById('button');
-button.onclick = () => getPixelArray();
+button.onclick = () => classify();
 
 const button2 = document.getElementById('button2');
 button2.onclick = () => clear(); 
@@ -97,48 +52,152 @@ button2.onclick = () => clear();
 const p = document.getElementById('p');
 
 socket.on("classified", data => {
-    console.log(data);
     p.innerHTML = `label: ${data.label}, probability: ${data.probability}`; 
-})
+});
 
-function getPixelArray() {
-    const imgd = ctx2.getImageData(0,0,scaledSize, scaledSize);
-    const pix = imgd.data;
-    // console.log(pix);
-    //const pixels = []
-    const greyScale = []
-    for (let i = 0; i < pix.length; i+=4) {
-       /* const red = pix[i];
-        const green = pix[i + 1];
-        const blue = pix[i + 2]; */
-        const alpha = pix[i + 3];
-        // pixels.push({red, green, blue, alpha});
-        greyScale.push(alpha);
-    }
-    
-    greyScale.forEach(x => {
-    //    console.log(x)
-    })
-    socket.emit("classify", greyScale);
+function classify() {
+    const normalizedContext = normalize(ctx);
+    let pixelArray = getGreyScalePixelArray(normalizedContext);
+
+    pixelArray = Array.from(pixelArray);
+
+
+    socket.emit("classify", pixelArray);
 }
 
+function getPixelArray(ctx) {
+    const height = ctx.canvas.height;
+    const width = ctx.canvas.width;
 
-function draw2(drawing) {
-    for (let i = 0; i < drawing.length; i++) {
-        for (let j = 0; j < drawing[i].length; j++) {
-            if (drawing[i][j]) {
-                ctx2.fillStyle = "black";
-                ctx2.fillRect(j, i, 1, 1);
-            }
+    const imageData = ctx.getImageData(0, 0, width, height);
+    const pixels = imageData.data;
+
+    return pixels;
+}
+
+function getGreyScalePixelArray(ctx) {
+    const pixels = getPixelArray(ctx);
+
+    const greyScalePixels  = pixels.filter((_, i) => (i + 1) % 4 === 0);
+    return greyScalePixels;
+}
+
+function getMinBoundBox(ctx) {
+    const height = ctx.canvas.height;
+    const width = ctx.canvas.width;
+
+    const pixelArray = getGreyScalePixelArray(ctx);
+    const pixelMatrix = chunkArray(pixelArray, width);
+
+    let minY = Infinity;
+    let minX = Infinity;
+    let maxY = -Infinity;
+    let maxX = -Infinity;
+
+
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < height; x++) {
+            const pixel = pixelMatrix[y][x];
+            if (pixel > 0) {
+                if (minX > x) {
+                    minX = x;
+                }
+                if (minY > y) {
+                    minY = y;
+                }
+                if (maxX < x) {
+                    maxX = x;
+                }
+                if (maxY < y) {
+                    maxY = y;
+                }
+            } 
         }
+    } 
+
+    return { minPoint: { x: minX, y: minY }, maxPoint: { x: maxX, y: maxY } };
+}
+
+function chunkArray(array, chunkSize) {
+    const chunkedArray = [];
+    let index = 0;
+    while (index < array.length) {
+        chunkedArray.push(array.slice(index, chunkSize + index));
+        index += chunkSize;
     }
+    return chunkedArray;
+} 
+
+function getPixelMatrix(ctx) {
+    const width = ctx.canvas.width;
+
+    const pixelArray = getGreyScalePixelArray(ctx);
+    const pixelMatrix = chunkArray(pixelArray, width);
+
+    return pixelMatrix;
+}
+
+function normalize(ctx) {
+    const boundBox = getMinBoundBox(ctx);
+
+    const boundBoxHeight = boundBox.maxPoint.y - boundBox.minPoint.y;
+    const boundBoxWidth = boundBox.maxPoint.x - boundBox.minPoint.x;
+
+    x = boundBoxHeight > boundBoxWidth ? boundBoxHeight : boundBoxWidth;
+
+    const normalizedCanvas = document.createElement("canvas");
+    normalizedCanvas.width = 20;
+    normalizedCanvas.height = 20;
+    const context = normalizedCanvas.getContext("2d");
+
+    context.drawImage(ctx.canvas, boundBox.minPoint.x, boundBox.minPoint.y, x, x, 0, 0, 20, 20)
+
+    // document.getElementById('p').appendChild(normalizedCanvas);
+
+    pm = getPixelMatrix(context);
+
+    const centerOfMass = getCenterOfMass(pm);
+
+    const normalizedCanvas2 = document.createElement("canvas");
+    // normalizedCanvas2.style.background = 'red';
+    normalizedCanvas2.width = 28;
+    normalizedCanvas2.height = 28;
+    const normalizedContext = normalizedCanvas2.getContext("2d");
+
+    const halfSize = 28 / 2;
+
+    normalizedContext.drawImage(normalizedCanvas, halfSize - centerOfMass.x, halfSize - centerOfMass.y);
+    // document.getElementById('p').appendChild(normalizedCanvas2);
+    return normalizedContext;
+}
+
+function getCenterOfMass(pixelMatrix) {
+    let numPixels = 0;
+    let sumX = 0;
+    let sumY = 0;
+    pixelMatrix.forEach((ys, y) => {
+        ys.forEach((pixel, x) => {
+            const weight = (pixel / 255)
+            sumX += (x * weight);
+            sumY += (y * weight);
+            numPixels += weight;
+        })
+    })
+
+    const x = sumX / numPixels;
+    const y = sumY / numPixels;
+
+    return { x, y };
 }
 
 function drawPoints(ctx, points) {
     // draw a basic circle instead
     if (points.length < 6) {
         const b = points[0];
-        ctx.beginPath(), ctx.arc(b.x, b.y, ctx.lineWidth / 2, 0, Math.PI * 2, !0), ctx.closePath(), ctx.fill();
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, ctx.lineWidth / 2, 0, Math.PI * 2, !0);
+        ctx.closePath(); 
+        ctx.fill();
         return
     }
     ctx.beginPath(), ctx.moveTo(points[0].x, points[0].y);
@@ -148,5 +207,6 @@ function drawPoints(ctx, points) {
         const d = (points[i].y + points[i + 1].y) / 2;
         ctx.quadraticCurveTo(points[i].x, points[i].y, c, d)
     }
-    ctx.quadraticCurveTo(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y), ctx.stroke()
+    ctx.quadraticCurveTo(points[i].x, points[i].y, points[i + 1].x, points[i + 1].y);
+    ctx.stroke();
 }
