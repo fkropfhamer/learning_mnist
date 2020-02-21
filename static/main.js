@@ -28,7 +28,9 @@ window.addEventListener("mousedown", () => {
 });
 
 window.addEventListener("mouseup", () => {
-    drawing.push([])
+    if (drawing[drawing.length - 1].length > 0) {
+        drawing.push([])
+    }
     mouseIsDown = false;
 })
 
