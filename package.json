@@ -1,0 +1,16 @@
+{
+  "name": "learning_mnist",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.2.3"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.6.0",
+    "draw-on-canvas": "^1.1.1"
+  }
+}
