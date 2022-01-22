@@ -115,10 +115,12 @@ const main = async () => {
   const root = document.querySelector('#root');
   const clearButton = document.querySelector('#clear-button');
   const predictButton = document.querySelector('#predict-button');
+  const output = document.querySelector('#output');
   
   const draw = new Draw(root, 256, 256);
 
   clearButton.onclick = () => {
+    output.innerHTML = "";
     draw.reset();
   }
 
@@ -126,11 +128,13 @@ const main = async () => {
   
 
   predictButton.onclick = async () => {
+    output.innerHTML = "Predicting...";
     const normalizedContext = normalize(draw.ctx);
     const pixelArray = Draw.getGreyScalePixelArray(normalizedContext);
 
     const prediction = await predict(model, tf.tensor(Array.from(pixelArray), [1, 28, 28, 1]));
     console.log(prediction);
+    output.innerHTML = `Prediction: ${prediction}`;
   }
 }
 
